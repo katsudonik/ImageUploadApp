@@ -33,7 +33,7 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find(params[:id])
     # 参照先のS3オブジェクトURLを作成
-    @image_url = "https://img-files-resize-uihuouy.s3-ap-northeast-1.amazonaws.com/store/" + @image.image_id + "-thumbnail.octet-stream"
+    @image_url = "https://#{ENV['AWS_S3_RESIZE_BUCKET_NAME']}.s3-ap-northeast-1.amazonaws.com/store/" + @image.image_id + "-thumbnail.octet-stream"
   end
 
   def destroy
