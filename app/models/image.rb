@@ -1,3 +1,3 @@
 class Image < ApplicationRecord
-    attachment :image
+    attachment :image, content_type: "image/jpeg"
 end
